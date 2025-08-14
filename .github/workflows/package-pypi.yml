@@ -43,7 +43,7 @@ jobs:
           python-version: ${{inputs.python-version}}
       - name: Set up tree-sitter CLI
         if: ${{inputs.generate}}
-        uses: tree-sitter/setup-action/cli@v2
+        uses: omeyenburg/tree-sitter-setup-action/cli@cache-keys-per-arch
       - name: Install dependencies
         run: |-
           if jq -e "$JQ_SCRIPT" package.json >/dev/null; then
@@ -101,7 +101,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Set up tree-sitter CLI
         if: ${{inputs.generate}}
-        uses: tree-sitter/setup-action/cli@v2
+        uses: omeyenburg/tree-sitter-setup-action/cli@cache-keys-per-arch
       - name: Install dependencies
         shell: bash
         run: |-

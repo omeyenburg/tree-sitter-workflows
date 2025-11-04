@@ -43,7 +43,7 @@ jobs:
           python-version: ${{inputs.python-version}}
       - name: Set up tree-sitter CLI
         if: ${{inputs.generate}}
-        uses: tree-sitter/setup-action/cli@v2
+        uses: tree-sitter/setup-action/cli@master
       - name: Install dependencies
         run: |-
           if jq -e "$JQ_SCRIPT" package.json >/dev/null; then
@@ -97,7 +97,7 @@ jobs:
         uses: actions/checkout@v5
       - name: Set up tree-sitter CLI
         if: ${{inputs.generate}}
-        uses: tree-sitter/setup-action/cli@v2
+        uses: tree-sitter/setup-action/cli@master
       - name: Install dependencies
         shell: bash
         run: |-
